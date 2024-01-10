@@ -1,0 +1,58 @@
+Docker Users:
+1. Save this docker-compose.yml
+2. Run this command. docker-compose up
+3. Launch a separate terminal to access redis-cli
+docker exec -it redis bash
+# Connect to Redis server
+redis-cli
+
+# Set a key-value pair
+SET mykey "Hello, Redis!"
+
+# Get the value for a key
+GET mykey
+
+# Scan all keys in the database using the SCAN command
+SCAN 0
+
+# Scan with a pattern (e.g., all keys starting with 'user:')
+SCAN 0 MATCH user:*
+
+# Scan with a count (specify the number of keys to return per iteration)
+SCAN 0 COUNT 10
+
+# Set a key with an expiration time in seconds
+SETEX mykey 3600 "Value with expiration time"
+
+# Set multiple key-value pairs
+MSET key1 "value1" key2 "value2"
+
+# Get values for multiple keys
+MGET key1 key2
+
+# Increment a key's value by 1
+INCR mycounter
+
+# Add a member to a set
+SADD myset "member1" "member2"
+
+# Get all members of a set
+SMEMBERS myset
+
+# Add an element to a list
+LPUSH mylist "element1" "element2"
+
+# Get elements from a list
+LRANGE mylist 0 -1
+
+# Publish a message to a channel
+PUBLISH mychannel "Hello, subscribers!"
+
+# Subscribe to a channel
+SUBSCRIBE mychannel
+
+# Unsubscribe from a channel
+UNSUBSCRIBE mychannel
+
+# Monitor all commands in real-time
+MONITOR
