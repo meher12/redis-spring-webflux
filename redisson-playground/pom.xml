@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.1</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.maherguru</groupId>
+	<artifactId>redisson-playground</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>redisson-playground</name>
+	<description>Project for Spring WebFlux and Redisson library</description>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.redisson</groupId>
+			<artifactId>redisson</artifactId>
+			<version>3.23.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<!-- The <dependencyManagement> tag is used to manage dependency versions. It allows you to centralize the versions of your project's dependencies. -->
+	<dependencyManagement>
+		<!-- The <dependencies> tag contains all the dependencies that are related to the project. -->
+		<dependencies>
+		<!-- Each <dependency> tag represents a single dependency. -->
+			 <dependency>
+				<!-- The <groupId> tag represents the group or organization that the dependency belongs to. -->
+				 <groupId>io.projectreactor</groupId>
+				<!-- The <artifactId> tag represents the id of the artifact (project) that is being referred to. -->
+				 <artifactId>reactor-bom</artifactId>
+				 <!-- The <version> tag represents the version of the dependency that you want to use. -->
+				 <version>2020.0.2</version>
+				 <!-- The <type> tag represents the type of the dependency. 'pom' type means that this dependency is a Project Object Model type. -->
+				 <type>pom</type>
+				 <!-- The <scope> tag represents the scope of the dependency. 'import' scope is used in situations where a project wants to include the POM of another project as a dependency. -->
+				 <scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
